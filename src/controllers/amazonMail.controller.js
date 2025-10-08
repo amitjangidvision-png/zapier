@@ -13,6 +13,8 @@ exports.saveEmail = async (req, res) => {
     await newEmail.save();
     res.status(201).json({ message: 'Email saved successfully', email: newEmail });
   } catch (error) {
+    console.error('Error in saveEmail:', error);
     res.status(500).json({ error: error.message });
   }
 };
+
