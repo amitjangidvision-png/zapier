@@ -17,6 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the API!');
+});
+
 app.use(
   cors({
     origin: process.env.CLIENT_URL || 'http://localhost:5173',
@@ -55,6 +59,7 @@ app.use(errorHandler);
 
 
 module.exports = app;
+
 
 
 
